@@ -1,0 +1,10 @@
+package br.edu.fatecfranca.ex0;
+
+public class Carro {
+
+	String modelo;
+	int ano;
+	float velocidade;
+	boolean motor;
+	
+}

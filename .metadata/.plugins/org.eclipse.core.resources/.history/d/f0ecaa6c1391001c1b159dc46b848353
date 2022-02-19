@@ -1,0 +1,22 @@
+package br.edu.fatecfranca.ex0;
+
+public class Testa {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Hoje é sexta-feira");
+		
+		// Cria um objeto de classe Carro
+		Carro obj1 = new Carro();
+		obj1.modelo = "Onix";
+		obj1.ano = 2019;
+		obj1.velocidade = 0;
+		obj1.motor = false;
+		
+		obj1.ligar();
+		obj1.acelearar(80);
+		obj1.frear(20);
+		obj1.desligar();
+	}
+	
+}

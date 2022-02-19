@@ -1,0 +1,9 @@
+package br.edu.fatecfranca.ex0;
+
+public class Testa {
+
+	public static void main(String[] args) {
+		System.out.println("Hoje é sexta-feira");
+	}
+	
+}

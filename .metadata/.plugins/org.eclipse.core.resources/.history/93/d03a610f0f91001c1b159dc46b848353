@@ -1,0 +1,18 @@
+package br.edu.fatecfranca.ex0;
+
+public class Carro {
+
+	// Declaração de variáveis	
+	String modelo;
+	int ano;
+	float velocidade;
+	boolean motor;
+	
+	// Métodos
+	void ligar() {
+		motor = true;
+	}
+	
+	
+	
+}
