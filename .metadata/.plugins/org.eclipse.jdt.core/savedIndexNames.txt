@@ -1,7 +1,0 @@
-INDEX VERSION 1.131+/home/gabriel/Documents/Fatec/4º Semestre/Programação Orientada a Objetos/.metadata/.plugins/org.eclipse.jdt.core
-1769457868.index
-3189021885.index
-3843864267.index
-627228394.index
-3009786799.index
-1332468738.index
