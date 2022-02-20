@@ -10,7 +10,6 @@ public class Produto {
 	float preco;
 
 	public Produto() {
-		super();
 	}
 
 	public Produto(int id, String descricao, int qtde, float preco) {
@@ -21,19 +20,24 @@ public class Produto {
 	}
 
 	public void comprar(int x) {
-		this.qtde += x;
+		if (x > 0) this.qtde += x;
+		else JOptionPane.showMessageDialog(null, "Não é possível comprar uma quantidade menor do que 0!");
 	}
 
 	public void vender(int x) {
-		this.qtde -= x;
+		if (this.qtde >= x) this.qtde -= x;
+		else JOptionPane.showMessageDialog(null,
+				"Não é possível vender uma quantidade maior do que a quantidade de estoque!");
 	}
 
-	public void subir(int x) {
-		this.preco += x;
+	public void subir(float x) {
+		if (x > 0) this.preco = x;
+		else JOptionPane.showMessageDialog(null, "O valor do produto não pode ser menor do que 0!");
 	}
 
-	public void descer(int x) {
-		this.preco -= x;
+	public void descer(float x) {
+		if (x > 0) this.preco = x;
+		else JOptionPane.showMessageDialog(null, "O valor do produto não pode ser menor do que 0!");
 	}
 
 	public void mostrar() {
