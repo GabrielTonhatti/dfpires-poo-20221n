@@ -8,6 +8,16 @@ public class Rio {
 	float nivel;
 	boolean poluido;
 
+	public Rio() {
+
+	}
+
+	public Rio(String nome, float nivel, boolean poluido) {
+		this.nome = nome;
+		this.nivel = nivel;
+		this.poluido = poluido;
+	}
+
 	void chover(float x) {
 		this.nivel += x;
 	}
@@ -25,8 +35,8 @@ public class Rio {
 	}
 
 	void mostrar() {
-		JOptionPane.showConfirmDialog(null,
-				"Nome: " + this.nome + ", nível: " + this.nivel + ", poluído: " + this.poluido);
+		JOptionPane.showMessageDialog(null,
+				String.format("Nome: %s, nível: %.2f, poluído: %b", this.nome, this.nivel, this.poluido));
 	}
 
 }

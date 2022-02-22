@@ -23,7 +23,7 @@ public class Aluno {
 	}
 
 	float notaFinal() {
-		return (p1 + p2) / 2;
+		return (this.p1 + this.p2) / 2;
 	}
 
 	void dadosAluno() {
