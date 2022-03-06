@@ -11,8 +11,8 @@ public class Cliente {
 	}
 
 	public Cliente(String numeroConta, String numeroAgencia, String nome, float saldo) {
-		this.numeroConta = numeroConta;
-		this.numeroAgencia = numeroAgencia;
+		this.setNumeroConta(numeroConta);
+		this.setNumeroAgencia(numeroAgencia);
 		this.nome = nome;
 		this.saldo = saldo;
 	}
@@ -41,14 +41,14 @@ public class Cliente {
 
 	public void setNumeroAgencia(String numeroAgencia) {
 		if (numeroAgencia.length() == 6) {
-			if (numeroConta.charAt(4) == '-') {
+			if (numeroAgencia.charAt(4) == '-') {
 				this.numeroAgencia = numeroAgencia;
 			} else {
-				this.numeroConta = "Inválido";
+				this.numeroAgencia = "Inválido";
 				System.out.println("Número da agência deve contem o DV!");
 			}
 		} else {
-			this.numeroConta = "Inválido";
+			this.numeroAgencia = "Inválido";
 			System.out.println("Número da agência deve ter tamanho 6!");
 		}
 	}
