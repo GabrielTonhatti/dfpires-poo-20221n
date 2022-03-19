@@ -1,4 +1,4 @@
-package br.edu.fatecfranca.exo;
+package br.edu.fatecfranca.ex0;
 
 import java.util.Date;
 
@@ -9,12 +9,12 @@ public class Cartao {
 	private int cvv;
 	private String bandeira;
 	private Conta conta; // Associação
-	private String senha;
+	private int senha;
 
 	public Cartao() {
 	}
 
-	public Cartao(int numero, Date validade, int cvv, String bandeira, Conta conta, String senha) {
+	public Cartao(int numero, Date validade, int cvv, String bandeira, Conta conta, int senha) {
 		this.numero = numero;
 		this.validade = validade;
 		this.cvv = cvv;
@@ -63,22 +63,32 @@ public class Cartao {
 		this.conta = conta;
 	}
 
-	public void mostra() {
-		System.out.printf("Número: %d, CVV: %d, validade: %tc, bandeira: %s%n", this.numero, this.cvv, this.validade,
-				this.bandeira);
-		this.conta.mostra();
+	public String mostra() {
+		return String.format("Número: %d, CVV: %d, validade: %tc, bandeira: %s, Conta: %s", this.numero, this.cvv,
+				this.validade, this.bandeira, this.conta.mostra());
 	}
 
-	public String getSenha() {
+	public int getSenha() {
 		return senha;
 	}
 
-	public void setSenha(String senha) {
+	public void setSenha(int senha) {
 		this.senha = senha;
 	}
 
-	public void sacar() {
-		// TODO efetive o saque, o saldo não pode ficar negativo
+	public void sacar(float x, int senha) {
+		if (senha == this.senha) { // verifica a senha
+			Date atual = new Date(); // data atual
+
+			if (atual.before(this.validade)) {
+				this.conta.setSaldo(this.conta.getSaldo() - x);
+			} else {
+				System.out.println("Cartão vencido");
+			}
+
+		} else {
+			System.out.println("Senha inválida");
+		}
 	}
 
 }

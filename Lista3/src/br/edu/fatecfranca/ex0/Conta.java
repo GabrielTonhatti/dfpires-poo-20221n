@@ -1,4 +1,4 @@
-package br.edu.fatecfranca.exo;
+package br.edu.fatecfranca.ex0;
 
 public class Conta {
 
@@ -44,11 +44,15 @@ public class Conta {
 	}
 
 	public void setSaldo(float saldo) {
-		this.saldo = saldo;
+		if (saldo >= 0) {
+			this.saldo = saldo;
+		} else {
+			System.out.println("Saldo não pode ficar negativa");
+		}
 	}
 
-	public void mostra() {
-		System.out.printf("Número: %s, agência: %s, nome: %s, saldo: %.2f", this.numero, this.agencia,
+	public String mostra() {
+		return String.format("Número: %s, agência: %s, nome: %s, saldo: %.2f", this.numero, this.agencia,
 				this.nome, this.saldo);
 	}
 
