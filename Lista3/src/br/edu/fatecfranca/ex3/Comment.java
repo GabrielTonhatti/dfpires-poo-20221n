@@ -40,4 +40,9 @@ public class Comment {
 		this.author = author;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("Code: %d, text: %s, author: %s", this.code, this.text, this.author);
+	}
+
 }
