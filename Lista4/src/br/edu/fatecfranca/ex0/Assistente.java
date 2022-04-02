@@ -1,6 +1,6 @@
 package br.edu.fatecfranca.ex0;
 
-public class Assistente extends Funcionario {
+public class Assistente extends Funcionario  {
 
 	private float bonus;
 
