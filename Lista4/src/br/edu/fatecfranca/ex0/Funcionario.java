@@ -1,6 +1,6 @@
 package br.edu.fatecfranca.ex0;
 
-public class Funcionario {
+public abstract class Funcionario {
 
 	protected int numero;
 	protected String nome;
@@ -38,6 +38,8 @@ public class Funcionario {
 	public void setSalario(float salario) {
 		this.salario = salario;
 	}
+	
+	public abstract float calculaSalarioFinal();
 
 	@Override
 	public String toString() {

@@ -23,7 +23,13 @@ public class Assistente extends Funcionario {
 
 	@Override
 	public String toString() {
-		return String.format("Bonus: %.2f, " + super.toString(), this.bonus);
+		return String.format("Bonus: %.2f, " + super.toString() + ", salario final: %.2f", this.bonus,
+				this.calculaSalarioFinal());
+	}
+
+	@Override
+	public float calculaSalarioFinal() {
+		return this.salario + this.bonus;
 	}
 
 }
