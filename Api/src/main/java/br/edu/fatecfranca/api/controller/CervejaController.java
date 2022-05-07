@@ -1,9 +1,8 @@
 package br.edu.fatecfranca.api.controller;
 
 import br.edu.fatecfranca.api.model.Cerveja;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -18,8 +17,21 @@ public class CervejaController {
     }
 
     @PostMapping("/cerveja/insere")
-    public ArrayList<Cerveja> insere() {
-        return cervejas;
+    public String insere(@RequestBody Cerveja cerveja) {
+        cervejas.add(cerveja);
+        return "Cerveja " + cerveja.getMarca() + " inserida com sucesso!";
+    }
+
+    @DeleteMapping("/cerveja/remove/{id}")
+    public String remove(@PathVariable int id) {
+        for (Cerveja cerveja : cervejas) {
+            if (cerveja.getId() == id) {
+                cervejas.remove(cerveja);
+                return "Cerveja removida com sucesso!";
+            }
+        }
+
+        return "Cerveja não encontrada!";
     }
 
 }
