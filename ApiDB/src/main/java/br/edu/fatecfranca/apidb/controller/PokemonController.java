@@ -15,21 +15,25 @@ public class PokemonController {
     private PokemonRepository pokemonRepository;
 
     @GetMapping
+    @CrossOrigin(origins="*")
     public List<Pokemon> get() {
         return pokemonRepository.findAll();
     }
 
     @PostMapping
+    @CrossOrigin(origins="*")
     public Pokemon add(@RequestBody Pokemon pokemon) {
         return pokemonRepository.save(pokemon);
     }
 
     @PutMapping
+    @CrossOrigin(origins="*")
     public Pokemon updates(@RequestBody Pokemon pokemon) {
         return pokemonRepository.save(pokemon);
     }
 
     @DeleteMapping("{id}")
+    @CrossOrigin(origins="*")
     public String delete(@PathVariable Long id) {
         try {
             pokemonRepository.deleteById(id);
@@ -38,6 +42,5 @@ public class PokemonController {
             return "Pokemon não encontrado para remoção";
         }
     }
-
 
 }
